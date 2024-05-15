@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Arth.la</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+        background: linear-gradient(to bottom, #b2dea9, #c4bc9e);
+        font-family: Arial, sans-serif;
+        background-attachment: fixed; 
+        background-repeat: no-repeat; 
+        }
+
+        .location {
+        color: white;
+        }
+
+        .phone-number {
+        color: white;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .order-total {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-total h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .order-total p {
+            margin-bottom: 10px;
+        }
+
+        .order-total hr {
+            margin: 20px 0;
+        }
+
+        .order-total h3 {
+            color: #4caf50;
+        }
+
+        #proceedBtn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="./assets/images/logo.png" alt="Logo Perusahaan" style="height: 50px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#catalogs">Our Catalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kontak">Contact</a>
+                </li>
+            </ul>
+            <div class="my-2 my-lg-0">
+                <a class="location mr-3" href="https://maps.app.goo.gl/bS7a5uZuWGUuRnmD8"><i class="fas fa-map-marker-alt mr-2"></i>Our Store</a>
+                <a class="phone-number" href="https://wa.me/6288212708616"><i class="fas fa-phone-alt mr-2"></i>Whatsapp</a>
+                <a class="btn btn-outline-light my-2 my-sm-0" href="signup.html">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mt-5 mb-4">Checkout</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Order Summary</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>Fresh Flower Bouquet</td>
+                            <td>1</td>
+                            <td>Rp 150.000</td>
+                            <td>Tema bunga merah pink, wrap putih gold</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <div class="order-total">
+                    <h2>Order Total</h2>
+                    <p>Subtotal: Rp 150.000</p>
+                    <p>Shipping: Free</p>
+                    <hr>
+                    <h3>Total: Rp 150.000</h3>
+                    <button id="proceedBtn" class="btn btn-success mt-3">Proceed to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            $('#proceedBtn').click(function() {
+                alert('Redirecting to payment page...');
+                
+            });
+        });
+    </script>
+</body>
+</html>

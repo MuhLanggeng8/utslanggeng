@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Arth.la</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body {
+        background: linear-gradient(to bottom, #b2dea9, #d5cba7);
+        background-attachment: fixed; 
+        background-repeat: no-repeat; 
+        }
+        
+        .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        }
+        .plus-background-image {
+        background-image: url('assets/images/backg.png'); 
+        background-size: cover; 
+        background-position: center; 
+        height: 400px; 
+        }
+        
+        .plus-overlay {
+        background-color: rgba(0, 0, 0, 0.5); 
+        position: relative;
+        text-align: center;
+        }
+        
+        .feature {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        .feature-box {
+        flex: 1 0 30%; 
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+        .feature-box {
+            flex: 1 0 50%;
+        }
+        }
+        @media (max-width: 480px) {
+        .feature {
+            flex-direction: column; 
+        }
+        .feature-box {
+            flex: 1 0 100%; 
+        }
+        }
+        
+        .feature-icon {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 20px;
+        }
+        .feature-title {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #333;
+        }
+        .feature-description {
+        font-size: 0.6rem;
+        line-height: 1.5;
+        color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="./assets/images/logo.png" alt="Logo Perusahaan" style="height: 50px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#catalogs">Our Catalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kontak">Contact</a>
+                </li>
+            </ul>
+            <div class="my-2 my-lg-0">
+                <a class="location mr-3" href="https://maps.app.goo.gl/bS7a5uZuWGUuRnmD8"><i class="fas fa-map-marker-alt mr-2"></i>Our Store</a>
+                <a class="phone-number" href="https://wa.me/6288212708616"><i class="fas fa-phone-alt mr-2"></i>Whatsapp</a>
+                <a class="btn btn-outline-light my-2 my-sm-0" href="signup.html">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="shop" class="container py-5">
+        <h2 class="mb-4 text-center text-uppercase" style="color: #333; font-family: 'Roboto', sans-serif; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Shop</h2>
+    <div class="container mb-4">
+        <div class="input-group">
+        <input type="text" class="form-control" id="searchInput" placeholder="Cari buket/hampers">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="searchButton">Cari</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="container mb-4">
+        <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Rentang Harga</h5>
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                <input type="number" class="form-control" id="minPrice" placeholder="Harga Minimum">
+                <div class="input-group-append">
+                    <span class="input-group-text">-</span>
+                </div>
+                <input type="number" class="form-control" id="maxPrice" placeholder="Harga Maksimum">
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Jenis Buket/Hampers</h5>
+            </div>
+            <div class="card-body">
+                <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="bouquetCheckbox" value="bouquet">
+                <label class="form-check-label" for="bouquetCheckbox">Buket</label>
+                </div>
+                <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="hampersCheckbox" value="hampers">
+                <label class="form-check-label" for="hampersCheckbox">Hampers</label>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="catalogs" class="container py-5">
+        <h2 class="mb-4 text-center" style="color: #333; font-family: 'Roboto', sans-serif; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Our Catalog</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/bunga1.jpg" class="img-fluid" alt="Catalog 1">
+                    <div class="catalog-overlay">
+                        <h5>Fresh Flower Bouquet</h5>
+                        <p>Harga : 150k</p>
+                        <button class="btn btn-primary add-to-cart" onclick="addToCart()"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/balon.jpg" class="img-fluid" alt="Catalog 2">
+                    <div class="catalog-overlay">
+                        <h5>Ballon Bouquet</h5>
+                        <p>Harga : 200k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/boneka.jpg" class="img-fluid" alt="Catalog 3">
+                    <div class="catalog-overlay">
+                        <h5>Graduation Bouquet</h5>
+                        <p>Harga : 85k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/custom.jpg" class="img-fluid" alt="Catalog 4">
+                    <div class="catalog-overlay">
+                        <h5>Secret Collection</h5>
+                        <p>Harga : 450k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/snack2.jpg" class="img-fluid" alt="Catalog 5">
+                    <div class="catalog-overlay">
+                        <h5>Snack Bouquet</h5>
+                        <p>Harga : 40-60k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/bunga2.jpg" class="img-fluid" alt="Catalog 6">
+                    <div class="catalog-overlay">
+                        <h5>Fresh Flower Bouquets</h5>
+                        <p>Harga : 200k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/balon2.jpg" class="img-fluid" alt="Catalog 7">
+                    <div class="catalog-overlay">
+                        <h5>Ballon Bouquet</h5>
+                        <p>Harga : 50k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/kerudung.jpg" class="img-fluid" alt="Catalog 8">
+                    <div class="catalog-overlay">
+                        <h5>Hijab Bouquet</h5>
+                        <p>Harga : 120k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/bunga2.jpg" class="img-fluid" alt="Catalog 9">
+                    <div class="catalog-overlay">
+                        <h5>Fresh Flower Bouquet</h5>
+                        <p>Harga : 250k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/hampers.jpg" class="img-fluid" alt="Catalog 10">
+                    <div class="catalog-overlay">
+                        <h5>Hampers Collection</h5>
+                        <p>Harga : 175k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/custom3.jpg" class="img-fluid" alt="Catalog 11">
+                    <div class="catalog-overlay">
+                        <h5>Ballon Collection</h5>
+                        <p>Harga : 125k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="catalog-item">
+                    <img src="assets/images/boneka1.jpg" class="img-fluid" alt="Catalog 12">
+                    <div class="catalog-overlay">
+                        <h5>Graduation Bouquet</h5>
+                        <p>Harga : 100k</p>
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn btn-outline-danger like"><i class="fas fa-heart"></i> Suka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="https://drive.google.com/file/d/136VoD81U5mpAm9r2IgTXkKOKCcwv3-f8/view?usp=drive_link" class="btn btn-dark">More Catalog</a>
+        </div>
+    </div>
+
+    <div id="plus" class="container py-5">
+        <h2 class="mb-4 text-center" style="color: #333; font-family: 'Roboto', sans-serif; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Why Us</h2>
+    <div id="plus" class="container py-5">
+        <div class="plus-background-image">
+          <div class="plus-overlay d-flex flex-column align-items-center justify-content-center">
+            <h1 class="display-4 text-white font-weight-bold">Follow, Subscribe, and Like</h1>
+            <p class="lead text-white">Arth.la siap memeriahkan acara Anda, ulang tahun, wisuda, anniversary, surprise dan lain-lain. Kustomisasikan sesuai dengan keinginan Anda. Dapatkan berbagai promo dengan memfollow social media kami, agar update info terbaru.</p>
+      
+            <div class="container feature mt-4">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center feature-box">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h2 class="feature-title">Accept Urgent Orders</h2>
+                    <p class="feature-description">Kami siap menerima order dadakan dan dikirim di hari yang sama.</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-3">
+                  <div class="text-center feature-box">
+                    <i class="fas fa-handshake feature-icon"></i>
+                    <h2 class="feature-title">Trustworthy</h2>
+                    <p class="feature-description">Kami siap menerima kepercayaan dari pelanggan dan memberi yang terbaik untuk kepuasan pelanggan.</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-3">
+                  <div class="text-center feature-box">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h2 class="feature-title">Professional</h2>
+                    <p class="feature-description">Profesionalisme adalah yang kami nomor satukan agar pelanggan mendapat buket dan hampers terbaik.</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-3">
+                  <div class="text-center feature-box">
+                    <i class="fas fa-heart feature-icon"></i>
+                    <h2 class="feature-title">Passionate</h2>
+                    <p class="feature-description">Moto kami adalah menerima permintaan pelanggan walaupun permintaannya aneh-aneh.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <div class="container">
+        <span>&copy; 2024 || Bouquet & Hampers by Arth.la</span>
+        </div>
+    </footer>
+
+    <script>
+        function addToCart() {
+            window.location.href = "checkout.html";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
